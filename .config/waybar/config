@@ -1,0 +1,126 @@
+{
+  "position": "top",
+  "height": 50,
+  "modules-left": ["cpu", "disk", "memory", "temperature", "tray"],
+  "modules-center": ["wlr/workspaces"],
+  "modules-right": ["network", "pulseaudio", "pulseaudio#microphone", "battery", "backlight", "clock", "custom/lock"],
+  "custom/lock": {
+    "format": " ",
+    "tooltip": false,
+    "on-click": "swaylock"
+  },
+  "custom/bluetooth": {
+    "format": "{}",
+    "interval": 1,
+    "on-click": "~/.config/rofi/bluetooth.sh",
+    "on-click-right": "~/.bin/bluetooth.sh toggle",
+    "exec": "~/.bin/bluetooth.sh"
+  },
+  "tray": {
+    "icon-size": 13,
+    "spacing": 10
+  },
+  "clock": {
+    "format": "󰅐 {:%H:%M}"
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰂄 {capacity}%",
+    "format-alt": "{icon} {time}",
+    "format-full": "󱈑 {capacity}%",
+    "format-icons": ["󱊡", "󱊢", "󱊣"]
+  },
+  "network": {
+    "format-wifi": "   {essid}",
+    "format-ethernet": "󰤮 Disconnected",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "󰤮 Disconnected",
+    "on-click": "~/.config/rofi/wifi.sh",
+    "tooltip-format-wifi": "  {signalStrength}% ⇅ {bandwidthDownBits}/{bandwidthUpBits}"
+  },
+  "pulseaudio": {
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "format": "{icon}  {volume}%",
+    "format-muted": "󰖁 Muted",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": " ",
+      "headset": " ",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    }
+  },
+  "pulseaudio#microphone": {
+    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "format": "{format_source}",
+    "format-source": " Unmuted",
+    "format-source-muted": " Muted"
+  },
+  "wlr/workspaces": {
+    "format": "{name}",
+    "on-click": "activate",
+    "all-outputs": true,
+    "sort-by-number": true,
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": ""
+    },
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1"
+  },
+  "cpu": {
+    "format": "  {usage}% 󰍛",
+    "interval": 1,
+    "format-alt-click": "click",
+    "format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰍛",
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+  },
+  "disk": {
+    "interval": 30,
+    "path": "/",
+    "format": "{percentage_used}% 󰋊",
+    "tooltip-format": "{used} used out of {total} on {path} ({percentage_used}%)"
+  },
+  "memory": {
+    "interval": 10,
+    "format": "{used:0.1f}G 󰾆",
+    "format-alt": "󰾆 {percentage}%",
+    "format-alt-click": "click",
+    "tooltip": true,
+    "tooltip-format": "{used:0.1f}GB/{total:0.1f}G",
+    "on-click-right": "foot --title btop sh -c 'btop'"
+  },
+  "temperature": {
+    "interval": 10,
+    "tooltip": false,
+    "thermal-zone": 0,
+    "critical-threshold": 82,
+    "format-critical": "{temperatureC}°C {icon} ",
+    "format": "{temperatureC}°C {icon} ",
+    "format-icons": [""],
+    "on-click-right": "foot --title btop sh -c 'btop'"
+  },
+  "backlight": {
+    "interval": 2,
+    "align": 0,
+    "rotate": 0,
+    "format": "{icon} {percent}",
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
+    "smooth-scrolling-threshold": 1
+  }
+}

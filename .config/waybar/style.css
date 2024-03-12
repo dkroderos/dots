@@ -1,0 +1,147 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: mononoki Nerd Font;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: white;
+}
+
+tooltip {
+    background: #0f0f0f;
+    border-radius: 15px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #262626;
+}
+
+#workspaces button {
+    padding: 5px 5px;
+    color: #cba6f7;
+}
+
+#workspaces button.focused {
+    color: #f9e2af;
+    border-radius: 15px;
+}
+
+#workspaces button.visible {
+    color: #f9e2af;
+}
+
+#workspaces button:hover {
+    color: #f9e2af;
+    border-radius: 15px;
+}
+
+#tray {
+    border-radius: 15px 15px 15px 15px;
+}
+
+#network {
+    background-color: #1e1e2e;
+    padding: 5px 10px;
+    margin: 10px 0px 0px 0px;
+    border-radius: 15px 0px 0px 15px;
+}
+
+#workspaces,
+#backlight,
+#custom-date,
+#custom-notification,
+#custom-lock,
+#custom-bluetooth,
+#clock,
+#battery,
+#pulseaudio,
+#tray,
+#cpu,
+#memory,
+#disk,
+#memory,
+#temperature {
+    background-color: #1e1e2e;
+    padding: 5px 10px;
+    margin: 10px 0px 0px 0px;
+}
+
+#workspaces,
+#custom-notification {
+    border-radius: 15px 15px 15px 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#custom-notification {
+    background-color: #f38ba8;
+    color: #0f0f0f;
+}
+
+#custom-bluetooth {
+    border-radius: 15px 0px 0px 15px;
+    margin-left: 20px;
+    margin-right: -5px;
+}
+
+#custom-date {
+    color: #9ec3c4;
+}
+
+#custom-lock {
+    color: #f38ba8;
+    border-radius: 0px 15px 15px 0px;
+    margin-right: 10px;
+}
+
+#clock {
+    color: #f9e2af;
+}
+
+#cpu {
+    margin-left: 10px;
+    color: #cba6f7;
+    border-radius: 15px 0px 0px 15px;
+}
+
+#disk {
+    color: #a6e3a1;
+}
+
+#memory {
+    color: #cba6f7;
+}
+
+#battery {
+    color: #a6e3a1;
+}
+
+#temperature {
+    color: #f9e2af;
+    border-radius: 0px 15px 15px 0px;
+    margin-right: 10px;
+}
+
+#battery.charging {
+    color: #89dceb;
+}
+
+#battery.warning:not(.charging) {
+    background-color: #fab387;
+    color: #0f0f0f;
+}
+
+#network {
+    color: #f9e2af;
+}
+
+#pulseaudio {
+    color: #89b4fa;
+}
+
+#backlight {
+    color: #89b4fa;
+}
