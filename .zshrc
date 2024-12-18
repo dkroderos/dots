@@ -9,6 +9,6 @@ plugins=(
 )
 
 alias rp="cd ~/Repositories"
-alias dkr="cd ~/GitHub/dkroderos"
+alias dkr="cd ~/Repositories/dkroderos"
 
 source $ZSH/oh-my-zsh.sh

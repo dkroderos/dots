@@ -1,0 +1,35 @@
+# import = ["/home/david/.config/alacritty/tokyo-night.toml"]
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[font]
+size = 13
+
+[font.bold]
+family = "Comic Code"
+style = "Bold"
+
+[font.bold_italic]
+family = "Comic Code"
+style = "Bold Italic"
+
+[font.italic]
+family = "Comic Code"
+style = "Italic"
+
+[font.normal]
+family = "Comic Code"
+style = "Regular"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.padding]
+x = 5
+y = 5
