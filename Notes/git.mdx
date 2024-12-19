@@ -1,0 +1,122 @@
+## Setting up Git
+
+#### Resources
+
+- [GitHub SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
+
+#### Install Git
+
+```
+sudo apt install git
+```
+
+```
+winget install -e --id Git.Git
+```
+
+#### Setup configs
+
+```
+git config --global user.name "David King Roderos"
+git config --global user.email dk.roderos@proton.me
+git config --global init.defaultBranch main
+git config --global core.editor "vim"
+```
+
+#### Configure line endings (for windows only)
+
+```
+git config --global core.autocrlf true
+```
+
+## Setting up GitHub SSH
+
+#### Generate SSH key
+
+```
+ssh-keygen -t ed25519 -C dk.roderos@proton.me
+```
+
+#### Start SSH agent
+
+```
+eval "$(ssh-agent -s)"
+```
+
+#### Generate SSH Config
+
+```
+touch ~/.ssh/config && echo -e "Host *\n\tAddKeysToAgent yes\n\tIdentityFile ~/.ssh/id_ed25519" > ~/.ssh/config
+```
+
+#### Actual content of file
+
+```
+Host *
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_ed25519
+```
+
+#### Add SSH
+
+```
+ssh-add ~/.ssh/id_ed25519
+```
+
+#### Copy the contents of public key and paste it to GitHub
+
+```
+cat ~/.ssh/id_ed25519.pub
+```
+
+#### If you have xclip
+
+```
+cat ~/.ssh/id_ed25519.pub | xclip -selection clipboard
+```
+
+#### Test SSH
+
+```
+ssh -T git@github.com
+```
+
+## Cheatsheet
+
+#### Remove files on staging area
+
+```
+git restore --staged .
+```
+
+#### Pull submodules
+
+```
+git submodule update --init --recursive
+```
+
+#### Update submodules to the latest version
+
+```
+git submodule update --remote
+```
+
+#### Rename the current branch
+
+```
+git branch -m new-branch-name
+git push origin --delete old-branch-name
+git push -u origin new-branch-name
+```
+
+#### Clean the repository by removing ignored and untracked files
+
+```
+git clean -fdx
+```
+
+#### Check what will be cleaned if the repository
+
+```
+git clean -fdx --dry-run
+```

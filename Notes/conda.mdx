@@ -1,0 +1,29 @@
+## Resources
+
+- [miniconda](https://docs.anaconda.com/miniconda/install/#quick-command-line-install)
+
+## Cheatsheet
+
+#### Deactivate base environment on start of the terminal
+
+```
+conda config --set auto_activate_base false
+```
+
+#### List all the environments
+
+```
+conda info --envs
+```
+
+#### Create environment with version and packages
+
+```
+conda create --name <environment_name> python=3.9 numpy
+```
+
+#### Remove environment
+
+```
+conda remove --name <environment_name> --all
+```

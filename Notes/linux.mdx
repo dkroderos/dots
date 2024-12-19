@@ -1,0 +1,30 @@
+## Must have packages
+
+#### Debian (apt)
+
+```
+sudo apt-get update
+sudo apt-get install nala git vim htop btop linux-headers-$(uname -r) gcc make ufw xclip
+```
+
+## Must do
+
+#### Setup firewall
+
+```
+sudo ufw enable
+```
+
+## Cheatsheet
+
+#### Copy contents of a file
+
+```
+cat filename | xclip -selection clipboard
+```
+
+#### Remove all zone identifiers on wsl
+
+```
+find . -name "*:Zone.Identifier" -type f -delete
+```
