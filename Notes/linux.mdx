@@ -4,7 +4,7 @@
 
 ```
 sudo apt-get update
-sudo apt-get install nala git vim htop btop linux-headers-$(uname -r) gcc make ufw xclip
+sudo apt-get install nala git vim htop btop ncdu linux-headers-$(uname -r) gcc make ufw xclip
 ```
 
 ## Must do
@@ -33,4 +33,16 @@ find . -name "*:Zone.Identifier" -type f -delete
 
 ```
 timedatectl set-local-rtc 1 --adjust-system-clock
+```
+
+#### Change file permission of a mounted drive
+
+```
+sudo chmod u=rwx,g=rwx,o= /dev/mounted-drive
+```
+
+#### Check all file sizes of the system excluding /media and /mnt
+
+```
+ncdu --exclude /media --exclude /mnt /
 ```
