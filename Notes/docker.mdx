@@ -106,3 +106,15 @@ docker rm -f $(docker ps -aq)
 ```
 docker rmi -f $(docker images -aq)
 ```
+
+#### Check how many containers are running
+
+```
+docker ps -q | wc -l
+```
+
+#### Check if there are any containers that aren't running in the compose stack
+
+```
+docker compose ps --all | grep -i exited
+```
