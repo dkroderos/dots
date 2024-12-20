@@ -28,3 +28,9 @@ cat filename | xclip -selection clipboard
 ```
 find . -name "*:Zone.Identifier" -type f -delete
 ```
+
+#### Fix incorrect windows time on linux dual boot
+
+```
+timedatectl set-local-rtc 1 --adjust-system-clock
+```
