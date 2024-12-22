@@ -44,6 +44,7 @@ sudo groupadd docker
 ```
 
 #### Add logged user to docker group (log back in to see changes)
+
 ```
 sudo usermod -aG docker $USER
 ```
@@ -117,4 +118,10 @@ docker ps -q | wc -l
 
 ```
 docker compose ps --all | grep -i exited
+```
+
+#### Remove all dangling images
+
+```
+docker images --filter "dangling=true" -q | xargs docker rmi
 ```
